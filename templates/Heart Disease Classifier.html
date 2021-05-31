@@ -1,0 +1,368 @@
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Heart Disease Test</title>
+	</head>
+	<style>
+
+		a:link, a:visited {
+			border-radius: 12px;
+  			background-color: white;
+  			color: black;
+  			padding: 15px 25px;
+ 			text-align: center;
+  			text-decoration: none;
+ 	 		display: inline-block;
+		}
+
+		a:hover, a:active {
+  			background-color: grey;
+		}
+		
+		.jumbotron {
+          	margin-top: 0px;
+          	margin-bottom: 0px;
+          	background-size: cover;
+          	background-repeat: no-repeat;
+    	}
+		
+		.btn {
+			border-radius: 12px;
+			width: 250px;
+			background-color: orange;
+			color: white;
+        	text-align: center;
+			font-size: 28px;
+  			opacity: 0.6;
+  			transition: 0.3s;
+  			display: inline-block;
+  			cursor: pointer;
+		}
+	
+		.card-body{
+			background-color: rgb(247, 247, 247);
+		}
+		
+		.glow {
+      		font-size: 50px;
+      		color: black;
+      		-webkit-animation: glow 1s ease-in-out infinite alternate;
+      		-moz-animation: glow 1s ease-in-out infinite alternate;
+      		animation: glow 1s ease-in-out infinite alternate;
+    	}
+
+    	@-webkit-keyframes glow {
+      	
+		  from {
+        	text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 0 0 50px #eeeeee, 0 0 60px #eeeeee, 0 0 70px #eeeeee;
+      		}
+
+      		to {
+        		text-shadow: 0 0 20px #eeeeee, 0 0 30px #eeeeee, 0 0 40px #eeeeee, 0 0 50px #eeeeee, 0 0 60px #eeeeee, 0 0 70px #eeeeee, 0 0 80px #eeeeee;
+      		}
+    	}
+      	
+		  section.pricing {
+       		 background: #312634;
+      		}
+
+      	.pricing .card {
+        	border: none;
+        	border-radius: 1rem;
+        	transition: all 0.2s;
+        	box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+      	}
+
+      	.pricing hr {
+        	margin: 1.5rem 0;
+      	}
+
+      	.pricing .card-title {
+        	margin: 0.5rem 0;
+        	font-size: 0.9rem;
+        	letter-spacing: 0.1rem;
+        	font-weight: bold;
+      	}
+
+      	.pricing .card-price {
+        	font-size: 3rem;
+        	margin: 0;
+      	}
+
+      	.pricing .card-price .period {
+        	font-size: 0.8rem;
+      	}
+
+     	.pricing ul li {
+       	 margin-bottom: 1rem;
+      	}
+
+      	.pricing .text-muted {
+        	opacity: 0.7;
+      	}
+
+      	.pricing .btn {
+        	font-size: 80%;
+        	border-radius: 5rem;
+        	letter-spacing: 0.1rem;
+        	font-weight: bold;
+        	padding: 1rem;
+        	opacity: 0.7;
+        	transition: all 0.2s;
+      	}
+
+      		/* Hover Effects on Card */
+
+      	@media (min-width: 992px) {
+        
+		.pricing .card:hover {
+          		margin-top: -0.25rem;
+          		margin-bottom: 0.25rem;
+         		 box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 10);
+        }
+        
+		.pricing .card:hover .btn 
+          opacity: 1;
+        }
+      }
+	</style>
+	<body background="https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1586368214/1586368212.jpg" style="background-repeat: no-repeat; background-size: cover">
+	
+		<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		
+		<!-- Navbar-->
+	<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1"><b> WELCOME</B></span>
+	</nav>
+
+	<div class="jumbotron" style="background-image:url(https://res.cloudinary.com/people-matters/image/upload/q_auto,f_auto/v1586368214/1586368212.jpg)">
+      	
+		  	<h1 class="display-5 glow" style="text-align: center; color: white;">HEART DISEASE TEST</h1>
+
+      		<h3 style="text-align: center; color: white;">
+			  To know more about World Heart Federation
+			</h3>
+			<div class="form-group" style="text-align: center ; color: white;">
+			<a href="https://world-heart-federation.org/">VISIT HERE</a>
+			</div>
+    </div>
+
+	<section class="pricing py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Free Tier -->
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">
+                  HEART DISEASE PREDICTION
+                </h5>
+
+                <hr />
+                <p class="">
+                  <li><b>Heart disease is one of the biggest cause for morbidity and
+                  mortality among the population of the world. Prediction of
+                  cardiovascular disease is regarded as one of the most
+                  important subject in the section of clinical data analysis.</li>
+				  <li>Clinical decisions are often made based on doctors’ experience and intuition rather 
+				  than on the knowledge-rich hidden in the data. This leads to errors and many costs that
+				   affect the quality of medical services.</li>
+				   <li>Using analytic tools and data modeling can help 
+				   in enhancing the clinical decisions. Thus, the goal here is to build a web application to 
+				   help doctors in diagnosing heart diseases.</b></li>
+                </p>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Plus Tier -->
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">
+                  ATTRIBUTES
+                </h5>
+
+                <hr />
+                <p class="">
+                  <li><b>AGE:</b> Age in years.</li>
+
+ 				  <li><b>SEX:</b> Sex (1 = male; 0 = female).</li>
+
+                  <li><b>CP:</b> Chest Pain Type ( Value 0 : typical angina, 
+				  								   Value 1 : atypical angina,
+												   Value 2 : non-anginal pain, 
+												   Value 3: asymptomatic ).</li>
+
+    			  <li><b>TRESTBPS:</b> Resting Blood Pressure in mm Hg on admission to the hospital.</li>
+                  <li><b>CHOL:</b> Serum Cholestoral in mg/dl.</li>
+                  <li><b>FBS:</b> Fasting Blood Sugar > 120 mg/dl ( 1 = true, 0 = false ).</li>
+                  <li><b>RESTECG:</b> Resting Electrocardiographic Results ( Value 0 : normal, Value 1 : having ST-T wave abnormality, Value 2 : probable or definite left ventricular hypertrophy).</li>
+                </p>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Pro Tier -->
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">
+                  ATTRIBUTES
+                </h5>
+
+                <hr />
+                <p class="">
+                  <li><b>THALACH:</b> Maximum Heart Rate achieved.</li>
+ 				  <li><b>EXANG:</b> Exercise Induced Angina ( 1 = yes, 0 = no ).</li>
+   				  <li><b>OLDPEAK:</b> ST Depression Induced by exercise relative to rest.</li>
+                  <li><b>SLOPE:</b> The Slope of the Peak Exercise ST Segment ( Value 0 : upsloping, Value 1 : flat, Value 2 : downsloping ).</li>
+                  <li><b>CA:</b> Number of major vessels ( 0-3 ) colored by flourosopy.</li>
+                  <li><b>THAL:</b> Thalassemia ( 3 = normal, 6 = fixed defect, 7 = reversable defect).</li>
+                  <li><b>TARGET:</b> Heart Disease ( 1 = no, 2 = yes).</li>
+                </p>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<b>
+	<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<h2 class="display-5 glow" style="text-align: center; color: white;"> LET'S KNOW ABOUT OUR HEART HEALTH !</h2><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="age">Age</label>
+							<input type="number" class="form-control" id="age" name="age" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="sex">Sex</label>
+							<select class="form-control" id="sex"  name="sex" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Male</option>
+							  <option value = "1">Female</option>
+							</select>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cp">Chest Pain Type</label>
+							<select class="form-control" id="cp" name = "cp" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Typical Angina</option>
+							  <option value = "1">Atypical Angina</option>
+							  <option value = "2">Non-anginal Pain</option>
+							  <option value = "3">Asymptomatic</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="trestbps">Resting Blood Pressure in mm Hg</label>
+							<input type="number" class="form-control" id="trestbps" name="trestbps"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="chol">Serum Cholestoral in mg/dl</label>
+							<input type="number" class="form-control" id="chol" name="chol" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+							<select class="form-control" id="fbs" name="fbs" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">False</option>
+							  <option value = "1">True</option>
+							</select>
+						</div>
+					  </div>
+					  
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="restecg">Resting ECG Results </label>
+								<select class="form-control" id="restecg" name="restecg" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "0">Normal</option>
+								  <option value = "1">Having ST-T wave abnormality  </option>
+								  <option value = "2"> Probable or definite left ventricular hypertrophy  </option>
+								</select>
+							  </div>
+							  <div class="col-sm">
+								<label for="thalach">Maximum Heart Rate</label>
+								<input type="number" class="form-control" id="thalach" name="thalach" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="exang">ST Depression Induced</label>
+								<input type="number" step="any" class="form-control" id="exang" name="exang" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="exang">Exercise Induced Angina </label>
+								<select class="form-control" id="oldpeak" name="oldpeak" required>
+								  <option disabled selected value> -- Select an Option -- </option>
+								  <option value = "1">No</option>
+								  <option value = "2">Yes</option>
+								</select>
+							  </div>
+						  </div>
+						  <br>
+						  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="slope">Slope of the Peak Exercise ST Segment </label>
+							<select class="form-control" id="slope" name="slope" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">Upsloping</option>
+							  <option value = "1">Flat</option>
+							  <option value = "2">Downsloping</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="ca">Number of Vessels Colored by Flourosopy</label>
+							<select class="form-control" id="ca" name = "ca" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "0">0</option>
+							  <option value = "1">1</option>
+							  <option value = "2">2</option>
+							  <option value = "3">3</option>
+							</select>
+						  </div>
+						  <div class="col-sm">
+							<label for="thal">Thalassemia</label>
+							<select class="form-control" id="thal" name = "thal" required>
+							  <option disabled selected value> -- Select an Option -- </option>
+							  <option value = "3">Normal</option>
+							  <option value = "6">Fixed defect</option>
+							  <option value = "7">Reversable defect</option>
+							</select>
+						  </div>
+					  </div>
+					  <br>
+					  <div class="form-group" style="text-align: center">
+						<input class="btn btn" type="submit" value="RESULT">
+					  </div>
+					  
+					  <!--Prediction Result-->
+					  <div id ="result" style="text-align: center">
+							<h2><strong style="color:red">{{result}}</strong></h2>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
+
